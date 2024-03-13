@@ -4,9 +4,9 @@
 - Conceitos de discretização de domínio. 
 - Implementação de sequências e séries em programação. 
 - Resolução numérica de EDOs de 1ª ordem pelo método de Euler. 
-- Método das diferenças finitas para solução de EDOs. 
+- Método de Runge Kutta de ordem superior.
 - Método de Taylor de 2ª ordem.  
-- Método de Runge Kutta de ordem superior. 
+- Método das diferenças finitas para solução de EDOs. 
 - Cálculo de Autovalores de sistemas de equações diferenciais. 
 - Plano de fase e trajetória.   
 - Aplicações integradas com outras disciplinas do curso.
