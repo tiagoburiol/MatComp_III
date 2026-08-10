@@ -58,8 +58,17 @@ O curso tinha 11 notebooks. Foram reorganizados em 14, com a seguinte sequência
    - Corrigidos typos: "cox(x)" → "cos(x)" (2x), "POr exemplo" → "Por exemplo", "coeficientes sāo" → "são", "eos" → "e os".
    - Outputs já executados pelo professor foram preservados (só células de markdown foram editadas).
 
+3. **Ajuste fino do Notebook 2 (Testes de convergência de séries):**
+   - Seção 2.5 (Usando SymPy para tratar séries) estava rasa (um único exemplo, atividade genérica sem itens) — desenvolvida com um segundo exemplo (`sp.apart` explicitando a telescopagem antes de somar com `sp.Sum`) e um terceiro que confirma simbolicamente a soma exata da série do Exemplo 2.1, além de uma atividade com dois itens lettered (a)/(b) remetendo a atividades anteriores.
+   - Seção 2.4 (Teste da raiz) também estava rasa (um exemplo sem confirmação simbólica, atividade com uma única série) — adicionada confirmação simbólica via `sp.limit` ao exemplo existente, um segundo exemplo totalmente simbólico ($b_n=\left(\frac{3n+2}{4n+1}\right)^{2n}$) e a atividade expandida para três itens (a)/(b)/(c), o último ilustrando que um fator polinomial não altera o limite do teste da raiz.
+   - Corrigida a numeração de exemplos (`Exemplo 2.1` a `2.11`, sequencial, sem reiniciar por subseção) e atividades (`Atividade 2.1` a `2.5`) para seguir o mesmo padrão do Notebook 1 — antes havia mistura de "Exemplo 1..9"/"Atividade 1..3" sem prefixo do notebook com "Atividade 2.4"/"2.5" já corretos.
+   - Corrigidas três referências cruzadas no texto que citavam números antigos de exemplo/atividade.
+   - Corrigidos typos: "SumPy" → "SymPy", "conver-gente" → "convergente", "calaculando" → "calculando", "ontenha" → "obtenha".
+   - Todas as saídas novas foram calculadas via SymPy e conferidas rodando o notebook completo (`jupyter nbconvert --execute`) numa cópia de teste antes de aceitar os valores; outputs já existentes no notebook original foram preservados sem alteração.
+   - Pendências que ficaram de fora por estarem fora do escopo pedido: pasta `imagens/` vazia e não referenciada (candidata a remoção), possível redundância entre a célula solta após a Atividade 2.2 e o enunciado da própria atividade.
+
 ## Próximos passos
 
-- Seguir o ajuste fino notebook por notebook, a partir do **Notebook 2** (Testes de convergência — ainda é só esqueleto, precisa de conteúdo real).
+- Seguir o ajuste fino notebook por notebook, a partir do **Notebook 3**.
 - Ao final do ajuste fino de todos os 14, revisitar os pontos de atenção listados acima (redundância 11/14, tamanho de 1 e 3, limpeza de arquivos soltos do repositório como `MatComp_III_old/`, `MatComp_III_old2/`, `.ipynb_checkpoints/`).
 - Decidir em algum momento se/quando commitar o progresso (nada commitado até o momento deste registro).
