@@ -67,8 +67,24 @@ O curso tinha 11 notebooks. Foram reorganizados em 14, com a seguinte sequência
    - Todas as saídas novas foram calculadas via SymPy e conferidas rodando o notebook completo (`jupyter nbconvert --execute`) numa cópia de teste antes de aceitar os valores; outputs já existentes no notebook original foram preservados sem alteração.
    - Pendências que ficaram de fora por estarem fora do escopo pedido: pasta `imagens/` vazia e não referenciada (candidata a remoção), possível redundância entre a célula solta após a Atividade 2.2 e o enunciado da própria atividade.
 
+4. **Ajuste fino dos Notebooks 3 e 4:** feito e já commitado (commits `d0d5f01` — Notebook 3; `21a585d` — Notebook 4). O Notebook 4 ganhou também um caderno companheiro de questões Moodle resolvidas.
+
+5. **Ajuste fino do Notebook 5 (Método de Euler para EDOs de 1ª ordem):**
+   - O notebook era cópia quase literal do NB06 antigo (só o título mudara) e estava **sem nenhuma saída executada** — logo, o código pôde ser reescrito à vontade e o notebook foi reexecutado do zero no fim.
+   - Removida a nota de reorganização, 3 células de código vazias e a propriedade inválida `outputs` que estava em todas as células markdown (resíduo do script de limpeza).
+   - Removidas 2 imagens não usadas (`pendulo.png`, `runge_kutta_ordem_2.png`, esta última do NB06); links de imagem padronizados no estilo `raw.githubusercontent.com/.../refs/heads/main/...`.
+   - Estrutura renumerada: `## 5` + seções `### 5.1` a `### 5.7` + `#### 5.3.1`; exemplos `Exemplo 5.1` a `5.4` (antes "6.1"–"6.4") com todas as referências cruzadas atualizadas; adicionadas `Atividade 5.1`–`5.3` distribuídas no corpo (padrão dos NB1–NB4).
+   - Introdução de diferenças finitas enxugada (recall + ponteiro para o NB3), mantendo só o essencial para motivar o Euler.
+   - Bugs corrigidos: tabela de erro do Exemplo 5.1 (comparava a aproximação em $t_{i+1}$ com a exata em $t_i$); solução exata do Exemplo 5.2 (`-5.x^4` → `-0,5x^4`); passo do Exemplo 5.3 (`h=0,20` no código vs. `0,25` no enunciado → `0,25`); `u(ti)-c` → `u(ti)+c`; fórmula `\frac{du}{dt}(t_i,t_i)` → `(t_i, u_i)`.
+   - Adicionada a função reutilizável `euler(f, x0, y0, h, N)`, usada em todos os exemplos (antes cada exemplo reescrevia o laço de um jeito).
+   - Nova Seção 5.4 "O erro do método de Euler e o efeito do passo $h$": tabela com a razão entre erros sucessivos (≈ 2) e gráfico log-log confirmando erro global $O(h)$.
+   - Seção do SciPy reescrita para resolver o mesmo PVI do Exemplo 5.3 (antes usava um PVI solto e inconsistente) e comparar Euler × `solve_ivp` × exata.
+   - Exemplo 5.4 (antes 6.4, SymPy + campo de direções) reenquadrado como "solução analítica × numérica", com a aproximação de Euler sobreposta ao campo de direções.
+   - Typos: "Matemativamente" → "Matematicamente", "apoximação" → "aproximação", "segiuntes" → "seguintes", "distribuidos" → "distribuídos", "os passos são executadas" → "executados".
+   - Notebook inteiro reexecutado com `jupyter nbconvert --execute`; sem erros.
+
 ## Próximos passos
 
-- Seguir o ajuste fino notebook por notebook, a partir do **Notebook 3**.
+- Seguir o ajuste fino notebook por notebook, a partir do **Notebook 6** (Métodos de Taylor e Runge-Kutta) — ainda tem nota de reorganização e numeração bagunçada ("Exemplo 7.1", "Atividade 1", "Exemplo 1.14").
 - Ao final do ajuste fino de todos os 14, revisitar os pontos de atenção listados acima (redundância 11/14, tamanho de 1 e 3, limpeza de arquivos soltos do repositório como `MatComp_III_old/`, `MatComp_III_old2/`, `.ipynb_checkpoints/`).
-- Decidir em algum momento se/quando commitar o progresso (nada commitado até o momento deste registro).
+- Notebooks 3 e 4 já commitados; Notebook 5 concluído no working tree, aguardando commit.
