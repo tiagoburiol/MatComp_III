@@ -101,11 +101,19 @@ O curso tinha 11 notebooks. Foram reorganizados em 14, com a seguinte sequência
    - Nova Seção 6.1.1 (Taylor de ordem $p$ geral) e Seção 6.3 (comparação de ordem): tabela de razão entre erros sucessivos e gráfico log-log para Euler/RK2/RK3/RK4, confirmando $O(h^p)$ para $p=1,2,3,4$.
    - Seção do SciPy: corrigido o uso de `Xe`/`Ye` de célula anterior e adicionado parágrafo sobre passo adaptativo do `RK45`.
    - Typos: "recorrênica" → "recorrência", "Darezo" → "Darezzo" (2×), "é dado po" → "é dado por", "$k4$" → "$k_4$".
-   - Pendência sinalizada mas não resolvida: existe um arquivo `06_taylor_e_runge_kutta_SOLVED.ipynb` na pasta, não rastreado pelo git e sem correspondência com nenhuma convenção usada no resto do curso — é quase idêntico ao notebook principal, mas **sem** a resolução da antiga Atividade 1 (nome sugere o oposto). Não foi tocado; decisão do professor sobre manter, atualizar ou remover.
+   - Seção de Referências adicionada ao final (Arenales/Darezzo e Burden/Faires, no padrão ABNT do restante do curso), preservando pequenos ajustes de texto que o professor já tinha feito no notebook nesse meio-tempo (formatação das fórmulas de $k_1,k_2,k_3,k_4$ do RK3/RK4 em linhas separadas).
+   - Notebook reexecutado do zero e commitado (commit `9efbaad`).
+   - `06_taylor_e_runge_kutta_SOLVED.ipynb` — arquivo não rastreado pelo git, quase idêntico ao notebook principal mas sem a resolução da antiga Atividade 1 (nome sugere o oposto) — **intocado a pedido explícito do professor** ("não faça nada com o SOLVED"); não é mais uma pendência a decidir, é para deixar como está.
+
+8. **Questões Moodle do Notebook 6** (arquivos *gitignored* — `06_questoes_moodle*.xml` / `06_questoes_moodle_*.ipynb`, nunca entram em commit):
+   - Conjunto criado em 2026-09-14: 5 questões de múltipla escolha cobrindo Taylor de ordem 2, RK2 (aperfeiçoado × modificado em EDO não afim), RK4 (questão gráfica), e comparação de ordem RK2×RK4 e RK3×RK4 (`N06_Q1`…`N06_Q5`), nos 4 arquivos-padrão do NB5 (`_moodle.xml`, `_alternativas.xml`, `_enunciados.ipynb`, `_resolvidas.ipynb`).
+   - PVIs novos, distintos dos usados como exemplo dentro do próprio NB6 (exceto Q4/Q5, que reaproveitam o PVI $y'=x-y+2$ do notebook, como o NB5 também faz na sua Q4): $y'=2x-y$ (Q1), $y'=xy$ (Q2, não afim — testa que RK2 aperfeiçoado e modificado não precisam coincidir), $y'=y-x^2+1$ (Q3, PVI clássico de Burden/Faires).
+   - Q3 é questão gráfica (RK4 × solução exata), no mesmo esquema da Q3 do NB5: 4 imagens geradas com matplotlib e embutidas como `data:image/png;base64` direto nos dois XML; no `_resolvidas.ipynb` a célula de código plota as quatro num grid 2×2.
+   - Todos os valores numéricos das alternativas foram calculados em Python e conferidos contra a saída executada do `_resolvidas.ipynb` (`jupyter nbconvert --execute`, sem erros); alternativas mantidas no padrão enxuto (só a afirmação, sem justificar o valor errado — a explicação de cada distrator fica só no `_resolvidas.ipynb`).
+   - `_moodle.xml` e `_alternativas.xml` idênticos no bloco de respostas, diferindo apenas no enunciado (completo × só o prompt "qual é verdadeira?"), como no padrão do NB5.
 
 ## Próximos passos
 
 - Seguir o ajuste fino notebook por notebook, a partir do **Notebook 7** (EDOs de 2ª ordem com SymPy).
 - Ao final do ajuste fino de todos os 14, revisitar os pontos de atenção listados acima (redundância 11/14, tamanho de 1 e 3, limpeza de arquivos soltos do repositório como `MatComp_III_old/`, `MatComp_III_old2/`, `.ipynb_checkpoints/`).
-- Notebooks 3, 4, 5 e 6 já com ajuste fino feito (NB5 = commits `392b1bb`, `39e27bb`, `aae3210`; NB6 = feito nesta sessão, ainda não commitado). As questões Moodle do NB5 (item 6) foram revisadas mas são arquivos *gitignored* — não entram em commit.
-- Decidir o destino do arquivo `06_taylor_e_runge_kutta_SOLVED.ipynb` (ver item 7 acima).
+- Notebooks 3, 4, 5 e 6 já com ajuste fino feito e commitado (NB5 = commits `392b1bb`, `39e27bb`, `aae3210`; NB6 = commit `9efbaad`). As questões Moodle do NB5 (item 6) e do NB6 (item 8) foram revisadas mas são arquivos *gitignored* — não entram em commit.
